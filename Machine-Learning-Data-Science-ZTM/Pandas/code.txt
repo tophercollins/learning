@@ -1,0 +1,1 @@
+conda activate C:\Users\tophe\Desktop\sample_project\env

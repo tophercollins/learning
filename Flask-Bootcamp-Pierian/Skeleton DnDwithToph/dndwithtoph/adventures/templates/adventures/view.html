@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Adventures</h1>
+            <ul>
+                {% for adventure in adventures %}
+                <li>
+                    <h3>{{adventure.title}}</h3>
+                    <i>{{adventure.tagline}}</i>
+                    <img src="{{adventure.picture}}" alt="{{adventure.title}} Picture">
+                    <p>{{adventure.blurb}}</p>
+                    <p>{{adventure.description}}</p>
+                    <p>{{adventure.tier}}</p>
+                    <a href="{{adventure.link}}">Sign Up</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

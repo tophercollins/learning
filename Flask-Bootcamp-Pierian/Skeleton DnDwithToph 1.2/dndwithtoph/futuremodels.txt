@@ -1,0 +1,162 @@
+class Comment():
+
+    __tablename__ = 'comments'
+
+    id = db.Column(db.Integer, primary_key = True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable = False)
+    date = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
+    text = db.Column(db.Text, nullable = False)
+    image = db.Column(db.String(64), nullable = True)
+
+    def __init__(self, text, user_id, post_id):
+        self.text = text
+        self.user_id = user_id
+        self.post_id = post_id
+
+    def __repr__(self):
+        return f"Comment ID: {self.id} -- Date: {self.date}"
+
+# Dungeons & Dragons Creations
+
+class CreationMixin:
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    name = db.Column(db.String(140), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    image = db.Column(db.String(64), nullable=True)
+
+    def __init__(self, name, description, user_id):
+        self.name = name
+        self.description = description
+        self.user_id = user_id
+
+    def __repr__(self):
+        return f"{self.__class__.__name__} ID: {self.id} -- Date: {self.date} -- Name: {self.name}"
+
+
+class Monster(db.Model, CreationMixin):
+    __tablename__ = 'monsters'
+    # add any unique fields to Monster here
+    size = db.Column(db.String(140), nullable=False)
+    type = db.Column(db.String(140), nullable=True)
+    alignment = db.Column(db.String(140), nullable=True)
+    armor_class = db.Column(db.Integer, nullable=False)
+    hit_points = db.Column(db.Integer, nullable=False)
+    speed = db.Column(db.String(140), nullable=False)
+    strength = db.Column(db.Integer, nullable=False)
+    dexterity = db.Column(db.Integer, nullable=False)
+    constitution = db.Column(db.Integer, nullable=False)
+    intelligence = db.Column(db.Integer, nullable=False)
+    wisdom = db.Column(db.Integer, nullable=False)
+    charisma = db.Column(db.Integer, nullable=False)
+    saving_throws = db.Column(db.String(140), nullable=True)
+    skills = db.Column(db.String(140), nullable=True)
+    damage_vulnerabilities = db.Column(db.String(140), nullable=True)
+    damage_resistances = db.Column(db.String(140), nullable=True)
+    damage_immunities = db.Column(db.String(140), nullable=True)
+    condition_immunities = db.Column(db.String(140), nullable=True)
+    senses = db.Column(db.String(140), nullable=True)
+    languages = db.Column(db.String(140), nullable=True)
+    challenge_rating = db.Column(db.Integer, nullable=False)
+    special_abilities = db.Column(db.String(140), nullable=True)
+    actions = db.Column(db.String(140), nullable=False)
+    legendary_actions = db.Column(db.String(140), nullable=True)
+    reactions = db.Column(db.String(140), nullable=True)
+
+class Item(db.Model, CreationMixin):
+    __tablename__ = 'items'
+    # add any unique fields to Item here
+    type = db.Column(db.String(140), nullable=False)
+    rarity = db.Column(db.String(140), nullable=True)
+    attunement = db.Column(db.String(140), nullable=True)
+    weight = db.Column(db.String(140), nullable=True)
+    cost = db.Column(db.String(140), nullable=True)
+
+class Weapon(db.Model, CreationMixin):
+    __tablename__ = 'weapons'
+    # add any unique fields to Weapon here
+    type = db.Column(db.String(140), nullable=False)
+    damage = db.Column(db.String(140), nullable=False)
+    properties = db.Column(db.String(140), nullable=True)
+    range = db.Column(db.String(140), nullable=True)
+    weight = db.Column(db.String(140), nullable=True)
+    cost = db.Column(db.String(140), nullable=True)
+
+class Spell(db.Model, CreationMixin):
+    __tablename__ = 'spells'
+    # add any unique fields to Spell here
+    level = db.Column(db.Integer, nullable=False)
+    school = db.Column(db.String(140), nullable=False)
+    casting_time = db.Column(db.String(140), nullable=False)
+    range = db.Column(db.String(140), nullable=False)
+    components = db.Column(db.String(140), nullable=True)
+    duration = db.Column(db.String(140), nullable=False)
+    classes = db.Column(db.String(140), nullable=True)
+
+class Class(db.Model, CreationMixin):
+    __tablename__ = 'classes'
+    # add any unique fields to Class here
+    hit_die = db.Column(db.Integer, nullable=True)
+    primary_ability = db.Column(db.String(140), nullable=True)
+    saving_throws = db.Column(db.String(140), nullable=True)
+    armor_proficiencies = db.Column(db.String(140), nullable=True)
+    weapon_proficiencies = db.Column(db.String(140), nullable=True)
+    tool_proficiencies = db.Column(db.String(140), nullable=True)
+    skill_proficiencies = db.Column(db.String(140), nullable=True)
+    equipment = db.Column(db.String(140), nullable=True)
+    features = db.Column(db.String(140), nullable=True)
+    subclasses = db.Column(db.String(140), nullable=True)
+
+class Race(db.Model, CreationMixin):
+    __tablename__ = 'races'
+    # add any unique fields to Race here
+    size = db.Column(db.String(140), nullable=True)
+    speed = db.Column(db.String(140), nullable=True)
+    ability_bonuses = db.Column(db.String(140), nullable=True)
+    languages = db.Column(db.String(140), nullable=True)
+    traits = db.Column(db.String(140), nullable=True)
+    subraces = db.Column(db.String(140), nullable=True)
+
+class Background(db.Model, CreationMixin):
+    __tablename__ = 'backgrounds'
+    # add any unique fields to Background here
+    skill_proficiencies = db.Column(db.String(140), nullable=True)
+    tool_proficiencies = db.Column(db.String(140), nullable=True)
+    languages = db.Column(db.String(140), nullable=True)
+    equipment = db.Column(db.String(140), nullable=True)
+    feature = db.Column(db.String(140), nullable=True)
+    personality_traits = db.Column(db.String(140), nullable=True)
+    ideals = db.Column(db.String(140), nullable=True)
+    bonds = db.Column(db.String(140), nullable=True)
+    flaws = db.Column(db.String(140), nullable=True)
+
+
+class City(db.Model, CreationMixin):
+    __tablename__ = 'cities'
+    # add any unique fields to City here
+
+class NPC(db.Model, CreationMixin):
+    __tablename__ = 'npcs'
+    # add any unique fields to NPC here
+
+class Encounter(db.Model, CreationMixin):
+    __tablename__ = 'encounters'
+    # add any unique fields to Encounter here
+
+class Adventure(db.Model, CreationMixin):
+    __tablename__ = 'adventures'
+    # add any unique fields to Adventure here
+
+class Campaign(db.Model, CreationMixin):
+    __tablename__ = 'campaigns'
+    # add any unique fields to Campaign here
+
+class World(db.Model, CreationMixin):
+    __tablename__ = 'worlds'
+    # add any unique fields to World here
+
+class Deity(db.Model, CreationMixin):
+    __tablename__ = 'deities'
+    # add any unique fields to Deity here

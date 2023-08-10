@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Edit Adventure</h1>
+            <form method="POST">
+                {# This csrf_token is required for security reasons. #}
+                {{ form.hidden_tag() }}
+                {{ form.id.label }} {{ form.id() }}<br>
+                {{ form.title.label }} {{ form.title() }}<br>
+                {{ form.tagline.label }} {{ form.tagline() }}<br>
+                {{ form.blurb.label }} {{ form.blurb() }}<br>
+                {{ form.description.label }} {{ form.description() }}<br>
+                {{ form.link.label }} {{ form.link() }}<br>
+                {{ form.picture.label }} {{ form.picture() }}<br>
+                {{ form.tier.label }} {{ form.tier() }}<br>
+                {{ form.submit() }}<br>
+                {{ form.submit2() }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

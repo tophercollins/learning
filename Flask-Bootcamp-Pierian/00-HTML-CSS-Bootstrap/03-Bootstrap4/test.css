@@ -1,0 +1,17 @@
+body {
+    background-image: url('parchment-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #3d3d3d;
+  }
+  
+#tea {
+    background-color: rgba(245, 222, 179, 0.85); /* Tea-stained color */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }

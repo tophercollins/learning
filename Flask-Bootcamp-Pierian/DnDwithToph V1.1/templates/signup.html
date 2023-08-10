@@ -1,0 +1,21 @@
+{# SIGNUP HTML #}
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="main-text"><h1>Sign Up</h1>
+        <p>Your userame has 3 requirements.</p>
+        <ul>
+            <li>Must be at least 8 characters long</li>
+            <li>Must end with a number</li>
+            <li>Must contain both an uppercase and lowercase letter</li>
+        </ul>
+        <p>Now type your username below to check.</p>
+        <form action="{{ url_for('check')}}" method="get">
+            <input type="text" name="username" placeholder="Username">
+            <input type="submit" value="Check">
+        </form>
+    
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{# CHECK HTML #}
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="main-text"><h1>Thank you.</h1>
+
+        {% if issues == 0 %}
+            <p>Thank you, {{ username }}. Your username is valid.</p>
+        {% else %}
+            <p>Sorry that username is not valid. You have {{ issues }} issue(s), please fix.</p>
+        {% endif %}
+        <p> <a href="{{ url_for('signup')}}">Back to signup</a></p>
+    
+    </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Add Testimonial</h1>
+            <form method="POST">
+                {# This csrf_token is required for security reasons. #}
+                {{ form.hidden_tag() }}
+                {{ form.person.label }} {{ form.person() }}<br>
+                {{ form.quote.label }} {{ form.quote() }}<br>
+                {{ form.submit() }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

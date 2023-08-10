@@ -1,0 +1,140 @@
+
+
+/* Text for navbar-brand should be in bold*/
+
+.navbar {
+    font-weight: bold;
+}
+
+/* Main page text */
+
+.main-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Page proper */
+
+.adventures-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tier1 {
+    margin: 20px;
+    width: 300px;
+    border: 2.5px solid #DFAD7C;
+    border-radius: 15px;
+    background-color: #DFAD7C;
+    color: #000000;
+    padding: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tier1box {
+    border: 2.5px solid #DFAD7C;
+    border-radius: 15px;
+    background-color: #DFAD7C;
+    color: #000000;
+    padding: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tier1:hover {
+    border-color: #A06327; /* Slightly darker gray for the hover effect */
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .tier2 {
+    margin: 20px;
+    width: 300px;
+    border: 2.5px solid #C0C0C0;
+    border-radius: 15px;
+    background-color: #C0C0C0;
+    color: #000000;
+    padding: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tier2box {
+    border: 2.5px solid #C0C0C0;
+    border-radius: 15px;
+    background-color: #C0C0C0;
+    color: #000000;
+    padding: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tier2:hover {
+    border-color: #969696; /* Slightly darker gray for the hover effect */
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .tier3 {
+    margin: 20px;
+    width: 300px;
+    border: 2.5px solid #FFD700;
+    border-radius: 15px;
+    background-color: #FFD700;
+    color: #000000;
+    padding: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tier3box {
+    border: 2.5px solid #FFD700;
+    border-radius: 15px;
+    background-color: #FFD700;
+    color: #000000;
+    padding: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tier3:hover {
+    border-color: #D6B600; /* Slightly darker gray for the hover effect */
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .adventures-container img {
+    width: 100%;
+    max-width: 293px;
+    height: auto;
+  }
+
+  .adventures-container p {
+    font-size: 0.8em;
+    max-font-size: 0.8em;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .adventures-container i {
+    font-style: italic,strong;
+    font-size: 1.2em;
+  }
+  
+  .adventures-container a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+
+
+  
+  @media only screen and (max-width: 768px) {
+    .adventures-container  p {
+      font-size: 0.8em;
+    }
+  }
+
+  /* Footer */
+
+  footer {
+    background-color: #4062BB;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+  }
