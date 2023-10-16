@@ -1,11 +1,16 @@
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, colormode
 import random
 
-timmy = Turtle()
-timmy.shape('turtle')
-timmy.width(20)
-timmy.speed(7)
-timmy.hideturtle()
+timmy = Turtle(visible=False)
+timmy.width(2)
+timmy.speed(100)
+
+
+colormode(255)
+
+def random_color():
+    return (random.randint(0,255),random.randint(0,255),random.randint(0,255))
+
 
 colors = ['red','black','yellow','blue','orange','green','maroon','purple','beige','brown','navy','gray']
 # num_of_sides = 3
@@ -23,20 +28,20 @@ colors = ['red','black','yellow','blue','orange','green','maroon','purple','beig
     
 #     num_of_sides += 1
 
-angles = [0,90,180,270]
+# angles = [0,90,180,270]
 
-for _ in range(200):
+# for _ in range(5000):
 
-    timmy.setheading(random.choice(angles))
-    timmy.forward(30)
-    timmy.color(random.choice(colors))
+#     timmy.setheading(random.choice(angles))
+#     timmy.forward(30)
+#     timmy.color()
 
-
-
-
-
-
-
+radius = 150
+angle =  5
+for _ in range(int(360/angle)):
+    timmy.circle(radius)
+    timmy.left(angle)
+    timmy.color(random_color())
 
 
 
